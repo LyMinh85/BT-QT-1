@@ -30,11 +30,10 @@ public class RelativeLayoutActivity extends AppCompatActivity {
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
         switch (item.getItemId()) {
             case R.id.menu_inf:
-                AlertDialog.Builder alertBuilder = new AlertDialog.Builder(this);
-                alertBuilder.setPositiveButton("Yes", null);
-                alertBuilder.setNegativeButton("No", null);
-                alertBuilder.setMessage("Hello world");
-                alertBuilder.show();
+                AlertDialog.Builder info = new AlertDialog.Builder(this);
+                info.setMessage("Bai Tap Qua Trinh 01 nhom \n NHOM 16 \n Link github: https://github.com/LyMinh85/BT-QT-1");
+                info.setPositiveButton("Ok", null);
+                info.show();
         }
         Toast.makeText(this, "", Toast.LENGTH_SHORT).show();
         return true;
