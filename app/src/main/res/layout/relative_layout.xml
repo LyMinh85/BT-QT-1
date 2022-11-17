@@ -22,7 +22,7 @@
                 android:layout_marginTop="5dp"
                 android:layout_marginEnd="5dp"
                 android:layout_marginBottom="5dp"
-                android:background="#6a77b7" />
+                android:background="@color/top_blue" />
 
             <View
                 android:id="@+id/bottom_pink"
@@ -33,7 +33,7 @@
                 android:layout_marginTop="5dp"
                 android:layout_marginEnd="5dp"
                 android:layout_marginBottom="5dp"
-                android:background="#d64f97" />
+                android:background="@color/bottom_pink" />
 
             <View
                 android:id="@+id/top_red"
@@ -41,7 +41,7 @@
                 android:layout_height="220dp"
                 android:layout_margin="5dp"
                 android:layout_toEndOf="@id/top_blue"
-                android:background="#a31d21" />
+                android:background="@color/top_red" />
 
             <View
                 android:id="@+id/center_gray"
@@ -50,7 +50,7 @@
                 android:layout_margin="5dp"
                 android:layout_below="@id/top_red"
                 android:layout_toEndOf="@id/top_blue"
-                android:background="#e6e6e6" />
+                android:background="@color/center_gray" />
 
             <View
                 android:id="@+id/bottom_blue"
@@ -62,16 +62,21 @@
                 android:layout_marginEnd="5dp"
                 android:layout_marginBottom="5dp"
                 android:layout_toEndOf="@id/bottom_pink"
-                android:background="#273a97" />
+                android:background="@color/bottom_blue" />
         </RelativeLayout>
 
 
-        <RelativeLayout
+        <LinearLayout
             android:id="@+id/layout_bottom"
             android:layout_width="match_parent"
             android:layout_height="50dp"
             android:layout_alignParentBottom="true"
-            android:background="@color/white">
+            android:background="@color/white"
+            android:orientation="vertical">
+            <SeekBar
+                android:id="@+id/seek_bar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
             <RadioGroup
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -97,7 +102,7 @@
                     android:layout_weight="1"
                     android:text="TableLayout"/>
             </RadioGroup>
-        </RelativeLayout>
+        </LinearLayout>
     </RelativeLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
