@@ -43,16 +43,14 @@ public class RelativeLayoutActivity extends AppCompatActivity {
         seekBar.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
             @Override
             public void onProgressChanged(SeekBar seekBar, int progressValue, boolean b) {
-                if (progressValue % 10 == 0) {
-                    for (View view : listView) {
-                        int color = Color.TRANSPARENT;
-                        Drawable background = view.getBackground();
-                        if (background instanceof ColorDrawable) {
-                            color = ((ColorDrawable) background).getColor();
-                        }
-                        color = color + progressValue * 2 + 23;
-                        view.setBackgroundColor(color);
+                for (View view : listView) {
+                    int color = Color.TRANSPARENT;
+                    Drawable background = view.getBackground();
+                    if (background instanceof ColorDrawable) {
+                        color = ((ColorDrawable) background).getColor();
                     }
+                    color = color + progressValue;
+                    view.setBackgroundColor(color);
                 }
             }
 
