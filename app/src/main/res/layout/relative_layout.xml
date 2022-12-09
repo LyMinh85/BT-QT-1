@@ -3,17 +3,19 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".RelativeLayoutActivity">
+    tools:context=".LayoutActivity">
 
-    <RelativeLayout
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@color/black">
+        android:background="@color/black"
+        android:orientation="vertical">
 
+        <!--    Relative layout        -->
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_above="@+id/layout_bottom">
+            android:layout_weight="9">
             <View
                 android:id="@+id/top_blue"
                 android:layout_width="150dp"
@@ -47,8 +49,8 @@
                 android:id="@+id/center_gray"
                 android:layout_width="match_parent"
                 android:layout_height="220dp"
-                android:layout_margin="5dp"
                 android:layout_below="@id/top_red"
+                android:layout_margin="5dp"
                 android:layout_toEndOf="@id/top_blue"
                 android:background="@color/center_gray" />
 
@@ -65,44 +67,23 @@
                 android:background="@color/bottom_blue" />
         </RelativeLayout>
 
-
         <LinearLayout
             android:id="@+id/layout_bottom"
             android:layout_width="match_parent"
             android:layout_height="50dp"
-            android:layout_alignParentBottom="true"
             android:background="@color/white"
-            android:orientation="vertical">
+            android:orientation="vertical"
+            android:layout_weight="1">
             <SeekBar
                 android:id="@+id/seek_bar"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"/>
-            <RadioGroup
+                android:layout_height="wrap_content" />
+
+            <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:weightSum="3"
-                android:checkedButton="@id/rb_relative_layout">
-                <RadioButton
-                    android:id="@+id/rb_linear_layout"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:text="LinearLayout" />
-                <RadioButton
-                    android:id="@+id/rb_relative_layout"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:text="RelativeLayout"/>
-                <RadioButton
-                    android:id="@+id/rb_table_layout"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:text="TableLayout"/>
-            </RadioGroup>
+                android:text="Relative Layout"/>
         </LinearLayout>
-    </RelativeLayout>
+    </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
